@@ -1,0 +1,23 @@
+{
+  "name": "cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManuelVict/cucumber.git"
+  },
+  "author": "Manuel Victoria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManuelVict/cucumber/issues"
+  },
+  "homepage": "https://github.com/ManuelVict/cucumber#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.0.1",
+    "hamjest": "^4.1.0"
+  }
+}
