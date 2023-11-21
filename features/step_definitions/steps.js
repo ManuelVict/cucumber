@@ -1,20 +1,21 @@
+const Person = require ('../../src/person.js')
 const { Given, When, Then} = require('@cucumber/cucumber')
+const {assertThat, is} = require('hamjest')
    
        
-Given('Lucy  is located {15} metres from seam', function(disntace){
-  // Write code here that turns the phrase above into concrete actions
-  console.log
-  return 'pending'
+Given('Lucy  is located {int} metres from seam', function(distance){
+this.lucy= new Person()
+this.sean= new Person()
+this.lucy.moveTo(distance)
 })
 
-When('Seam shouts {string}',function(string) {
-  // Write code here that turns the phrase above into concrete 
-  return 'pending'
+When('Seam shouts {string}',function(message) {
+this.sean.shout(message)
+this.message = message
 
 })
 
 Then('Lucy hears Seam´s message', function(){
-  // Write code here that turns the phrase above into concrete actions
-  return 'pending'
+  assertThat(this.lucy.messageHeard(), is([this.message]))
 
 })
