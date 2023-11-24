@@ -1,17 +1,23 @@
-class Person{
+class Person {
+    constructor(network) {
+      this.messages = []
+      this.network = network
+      this.network.subscribe(this)
+    }
     
-     moveTo(distance){
-
+    shout(message) {
+      this.network.broadcast(message)
     }
-
-    shout(message){
-
+  
+    hear(message) {
+      this.messages.push(message)
     }
-
-    messageHeard(){
-        return ["free beagle at seam's"]
-
+  
+    messagesHeard() {
+      return this.messages
     }
-
-}
-module.exports = Person
+  }
+    
+  module.exports = {
+    Person : Person
+  }
